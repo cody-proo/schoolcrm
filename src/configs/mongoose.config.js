@@ -4,9 +4,7 @@ const envConfigs = require("./env.config");
 const mongooseConfig = () => {
   return new Promise((resolve, reject) => {
     try {
-      mongoose.connect(envConfigs.databaseUrl, {
-        dbName: envConfigs.databaseName,
-      });
+      mongoose.connect(envConfigs.databaseUrl, {});
       mongoose.connection.on("open", () => {
         console.log("The database is running");
       });

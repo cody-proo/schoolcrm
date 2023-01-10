@@ -65,6 +65,10 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    school: {
+      type: Schema.Types.ObjectId,
+      ref: "schools",
+    },
   },
   baseOptionModel
 );
