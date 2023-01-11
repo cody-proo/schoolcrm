@@ -74,3 +74,4 @@ const userSchema = new Schema(
 );
 
 module.exports = model("users", userSchema);
+module.exports.UserRoles = UserRoles;

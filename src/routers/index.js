@@ -1,6 +1,6 @@
 const express = require("express");
 const requestWrapper = require("../middlewares/request.middleware");
-const routes = [require("./school.router")];
+const routes = [require("./school.router"), require("./user.router")];
 
 const router = express.Router();
 

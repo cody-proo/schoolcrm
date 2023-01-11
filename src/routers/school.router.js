@@ -11,7 +11,7 @@ const {
 } = require("../validators/school.validator");
 const { HttpVerb } = require("../constants/httpVerb.constants");
 
-const userRoutes = {
+const schoolRoutes = {
   ["/api/schools"]: [
     {
       path: "/",
@@ -43,4 +43,4 @@ const userRoutes = {
   ],
 };
 
-module.exports = userRoutes;
+module.exports = schoolRoutes;
