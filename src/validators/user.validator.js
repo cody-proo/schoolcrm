@@ -12,6 +12,8 @@ const createUserDTO = joi.object({
   bio: joi.string().required(),
   dateOfBirth: joi.date().required(),
   school: joi.number().required(),
+  password: joi.string().required(),
+  code: joi.string().required(),
 });
 
 const updateUserDTO = joi.object({
@@ -25,6 +27,7 @@ const updateUserDTO = joi.object({
   bio: joi.string().optional(),
   dateOfBirth: joi.date().optional(),
   school: joi.number().optional(),
+  code: joi.string().optional(),
 });
 
 module.exports = { createUserDTO, updateUserDTO };

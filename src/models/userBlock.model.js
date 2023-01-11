@@ -3,13 +3,17 @@ const baseOptionModel = require("./base-option.model");
 
 const userBlocksSchema = new Schema(
   {
-    isBlcoked: {
+    isBlocked: {
       type: Boolean,
-      required: true,
+      default: true,
     },
     description: {
       type: String,
       required: true,
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
     },
   },
   baseOptionModel

@@ -9,7 +9,7 @@ routes.map((routeItem) => {
     routeItem[routeItemKey].map((route) => {
       router[route.method](
         routeItemKey.concat(route.path),
-        requestWrapper(route.dto, route.handler)
+        requestWrapper(route.dto, route.handler, route.middlewares)
       );
     });
   });

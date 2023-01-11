@@ -5,19 +5,33 @@ const {
   deleteUser,
   getSingleUser,
   getAllUsers,
+  blockUser,
+  unBlockUser,
 } = require("../controllers/user.controller");
 const {
   createUserDTO,
   updateUserDTO,
 } = require("../validators/user.validator");
+const UploaderFile = require("../configs/uploader.config");
 
 const userRoutes = {
   "/api/users": [
+    {
+      path: "/block/:id",
+      handler: blockUser,
+      method: HttpVerb.Post,
+    },
+    {
+      path: "/unblock/:id",
+      handler: unBlockUser,
+      method: HttpVerb.Delete,
+    },
     {
       path: "/",
       handler: createUser,
       dto: createUserDTO,
       method: HttpVerb.Post,
+      middlewares: [UploaderFile.single("image")],
     },
     {
       path: "/:id",

@@ -1,5 +1,6 @@
-const requestWrapper = (dto, handler) => {
+const requestWrapper = (dto, handler, middlewares) => {
   return (request, response, next) => {
+    middlewares.map((middleware) => middleware(request, response, next));
     if (dto) {
       const { error } = dto.validate(request.body);
       if (error) {
